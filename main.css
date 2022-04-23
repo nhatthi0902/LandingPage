@@ -15,6 +15,8 @@
   --font-size-s: 0.875rem;
 
   --box-shadow: 0px 10px 60px rgba(38, 45, 118, 0.08);
+  --box-shadow-inset: 0px 10px 60px rgba(38, 45, 118, 0.08),
+    inset 0px -4px 0px #ff7777;
 }
 *,
 *:before,
@@ -81,6 +83,7 @@ header .container .logo {
   font-size: 2.5rem;
   line-height: 3rem;
   font-weight: bold;
+  color: var(--color-white);
 }
 
 header .container nav ul {
@@ -91,6 +94,10 @@ header .container nav ul {
 header .container nav ul li {
   font-size: var(--font-size-base);
   line-height: 1.375rem;
+}
+
+header .container nav ul li a {
+  color: var(--color-white);
 }
 
 .menu-item + .menu-item {
@@ -171,9 +178,37 @@ header .container nav ul li {
   width: 500px;
 }
 
+.showcase .title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase .title h2 {
+  font-size: 2.5rem;
+  line-height: 3.4375rem;
+  color: var(--color-dark-blue);
+  font-weight: 800;
+}
+
+.showcase .title .border {
+  margin-top: 0.5rem;
+  height: 0.25rem;
+  width: 5.25rem;
+  background: var(--color-primary);
+  border-radius: 2px 0px;
+}
+
+.showcase .showcase-content {
+  margin-top: 4.6875rem;
+}
+
 .services-showcase {
   position: relative;
   overflow-x: hidden;
+  padding-bottom: 1rem;
 }
 
 .services-showcase .blurred {
@@ -193,31 +228,16 @@ header .container nav ul li {
   right: -200px;
 }
 
-.services-showcase .title {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 0.5rem;
-  font-size: 2.5rem;
-  line-height: 3.4375rem;
-  color: var(--color-dark-blue);
-  font-weight: bold;
-}
-
-.services-showcase .title .border {
-  margin-top: 1rem;
-  height: 0.24rem;
-  width: 5.25rem;
-  background: var(--color-primary);
-}
-
 .services {
-  padding-top: 4.6875rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.services.tablet {
+  display: none;
 }
 
 .service {
@@ -229,9 +249,18 @@ header .container nav ul li {
   border-radius: 1.25rem;
 }
 
+.service.key {
+  box-shadow: var(--box-shadow-inset);
+}
+
 .service .card {
   width: 100%;
-  height: 227px;
+  border-radius: 0.875rem;
+  box-shadow: 0px 16px 16px rgb(0, 0, 0, 0.2);
+}
+
+.service .card img {
+  box-shadow: var(--box-shadow);
 }
 
 .service .card img {
@@ -303,7 +332,6 @@ header .container nav ul li {
 }
 
 .solution-showcase .solutions {
-  margin-top: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -348,28 +376,7 @@ header .container nav ul li {
   color: var(--color-white);
 }
 
-.partner-showcase .title {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 0.5rem;
-  font-size: 2.5rem;
-  line-height: 3.4375rem;
-  color: var(--color-dark-blue);
-  font-weight: bold;
-}
-
-.partner-showcase .title .border {
-  margin-top: 1rem;
-  height: 0.24rem;
-  width: 5.25rem;
-  background: var(--color-primary);
-}
-
 .partner-showcase .partners {
-  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
@@ -436,7 +443,33 @@ footer .footer-content {
 }
 
 /*RESPONESIVE=======================*/
-@media screen and (max-width: 596px) {
+
+@media screen and (max-width: 1024px) {
+  .services {
+    display: none;
+  }
+  .services.tablet {
+    display: block;
+  }
+
+  .services.tablet .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .row + .row {
+    margin-top: 1.5rem;
+  }
+
+  .services.tablet .service {
+    width: 394px;
+    height: 512px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
@@ -493,8 +526,19 @@ footer .footer-content {
 
   .stylized-cards img {
     width: 350px;
-    top: -20px;
-    left: 0;
+    top: -10px;
+    left: 20px;
+  }
+
+  .services {
+    display: grid;
+  }
+  .services.tablet {
+    display: none;
+  }
+
+  .showcase .showcase-content {
+    margin-top: 3rem;
   }
 
   .services-showcase .title {
@@ -505,9 +549,8 @@ footer .footer-content {
   }
 
   .services {
-    padding-top: 4.6875rem;
     display: grid;
-    grid-template-rows: repeat(3, 485px);
+    grid-template-rows: repeat(3, 492px);
     grid-template-columns: 1fr;
     row-gap: 1.5rem;
   }
