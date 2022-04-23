@@ -444,7 +444,7 @@ footer .footer-content {
 
 /*RESPONESIVE=======================*/
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (min-width: 768px) {
   .services {
     display: none;
   }
@@ -469,7 +469,7 @@ footer .footer-content {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.97px) {
   body {
     overflow-x: hidden;
   }
@@ -561,7 +561,7 @@ footer .footer-content {
   }
 
   .solution-showcase {
-    margin-top: 1rem;
+    margin-top: -13rem;
   }
 
   .solution-showcase .title-wrapper .main-title {
