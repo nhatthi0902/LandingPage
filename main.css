@@ -364,6 +364,7 @@ header .container nav ul li a {
   text-align: center;
   font-size: 27px;
   line-height: 30px;
+  white-space: nowrap;
 }
 
 .solution-showcase .solutions .solution .solution-description .sub-des {
