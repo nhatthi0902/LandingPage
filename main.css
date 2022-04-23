@@ -178,6 +178,10 @@ header .container nav ul li a {
   width: 500px;
 }
 
+.showcase {
+  position: relative;
+}
+
 .showcase .title {
   width: 100%;
   display: flex;
@@ -211,7 +215,7 @@ header .container nav ul li a {
   padding-bottom: 1rem;
 }
 
-.services-showcase .blurred {
+.blurred {
   width: 406px;
   height: 406px;
   position: absolute;
@@ -371,6 +375,11 @@ header .container nav ul li a {
   text-align: center;
   font-size: 16px;
   line-height: 29px;
+}
+
+.partner-showcase .blurred.blurred-1 {
+  top: 0;
+  left: -86px;
 }
 
 .partner-showcase .title-wrapper {
