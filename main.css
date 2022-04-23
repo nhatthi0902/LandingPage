@@ -610,6 +610,10 @@ footer .footer-content {
     align-items: flex-start;
   }
 
+  .headline-content {
+    margin-top: 0;
+  }
+
   .headline-content .btn-contact {
     margin-top: 2.625rem;
   }
