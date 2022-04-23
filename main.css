@@ -180,6 +180,7 @@ header .container nav ul li a {
 
 .showcase {
   position: relative;
+  z-index: 5;
 }
 
 .showcase .title {
@@ -680,6 +681,10 @@ footer .footer-content {
 
   .info {
     margin-bottom: 0.5rem;
+  }
+
+  .blurred {
+    display: none;
   }
 }
 
