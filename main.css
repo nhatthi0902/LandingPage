@@ -339,11 +339,16 @@ header .container nav ul li a {
 
 .solution-showcase .solutions .solution {
   width: 304px;
+  height: 310px;
 }
 
-.solution-showcase .solutions .solution img {
-  width: 220px;
-  height: 164px;
+.solution-img {
+  height: 130px;
+}
+
+.solution-img img {
+  width: 100%;
+  height: 100%;
 }
 
 .solution-showcase .solutions .solution .solution-description {
@@ -576,6 +581,10 @@ footer .footer-content {
     margin-top: -13rem;
   }
 
+  .solution-showcase .title-wrapper {
+    margin-top: 20.75rem;
+  }
+
   .solution-showcase .title-wrapper .main-title {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -588,10 +597,13 @@ footer .footer-content {
 
   .solution-showcase .solutions {
     flex-direction: column;
+    gap: 2rem;
   }
 
   .solution-showcase .solutions .solution {
     margin-bottom: 2rem;
+    width: 304px;
+    height: 200px;
   }
 
   .solution-showcase .solutions .solution .solution-description {
