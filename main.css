@@ -180,7 +180,6 @@ header .container nav ul li a {
 
 .showcase {
   position: relative;
-  z-index: 5;
 }
 
 .showcase .title {
@@ -396,6 +395,8 @@ header .container nav ul li a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
+  position: relative;
+  z-index: 5;
 }
 
 .partner {
